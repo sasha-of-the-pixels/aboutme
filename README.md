@@ -1,7 +1,7 @@
 # Sasha Mishkin's site
 I'm a 4th-year undergrad student at Carnegie Mellon who loves computer graphics :)
 
-This site is going to contain details about my past and current technical projects, when I get around to setting this up fully.
+This site is going to contain details about my past and current research & creations, when I get around to setting this up fully.
 
 ## About me
 todo
