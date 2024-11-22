@@ -22,6 +22,9 @@ todo
 #### Final Game
 I should be working on said final game instead of writing this right now.
 
+### Shaders
+Those are fun! (todo)
+
 ## Non-technical stuff
 I have interests besides math & graphics programming, probably
 
