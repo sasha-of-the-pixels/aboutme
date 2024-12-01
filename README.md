@@ -1,5 +1,4 @@
-# Sasha Mishkin's site
-I'm a 4th-year undergrad student at Carnegie Mellon who loves computer graphics :)
+Welcome to my website! I'm **Sasha Mishkin**, a 4th-year undergrad math major at Carnegie Mellon who loves computer graphics :)
 
 This site is going to contain details about my past and current research & creations, when I get around to setting this up fully.
 
@@ -15,7 +14,7 @@ I'm passionate about all sorts of coding but especially enjoy creative coding (f
 ### Walk on Spheres for Poisson Surface Reconstruction
 This was my final project for CMU's Physics-Based Rendering course. Normally, students implement an advanced rendering technique for this project, but instead I implemented a Monte Carlo solver for Poisson Surface Reconstruction that ended up introducing me to key ideas in my (above) research project. I will try to share the project's code later, if I can manage to separate its code from the educational renderer (DIRT) in which I built the solver.
 
-I made a [writeup](https://github.com/sasha-of-the-pixels/aboutme/blob/main/15\_468\_Report\_sasha\_noteaser.pdf) on the project. Credits not mentioned in the writeup include Ioannis Gkioulekas for supervising the project as the course instructor and Alan Lee (teaching assistant at the time) for debugging help.
+I made a [writeup](https://github.com/sasha-of-the-pixels/aboutme/blob/main/15\_468\_Report\_sasha\_noteaser.pdf) on the project. Credits not mentioned in the writeup include Ioannis Gkioulekas for supervising the project as the course instructor and [Alan Lee](https://github.com/Alan7996) (teaching assistant at the time) for debugging help.
 
 I have some future plans for this project - I would like to use raymarching and possibly also Harnack tracing (as in [this paper](https://markjgillespie.com/Research/harnack-tracing/index.html)) to render reconstructed surfaces.
 
