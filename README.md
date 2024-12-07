@@ -18,7 +18,10 @@ I have some future plans for this project - I would like to use raymarching and 
 ### Game Programming
 I have wanted to gain practice with coding games and similar interactive applications for a very long time. This is because games are fun, involve a lot of graphics programming, and also are a good exercise designing and building complex programs that allow for a wide range of states. This fall (2024), I took a CMU course on game programming, [15-466](http://graphics.cs.cmu.edu/courses/15-466-f24/), which was a fantastic opportunity to gain these technical skills. We wrote our games for the course using C++ and OpenGL with some starter code but no game engine.
 #### Small Games
-The small game assignments were each built in about a week's time. I currently consider two of these games to be in a complete enough state to share here. **(todo)**
+The small game assignments were each built in about a week's time. I currently consider two of these games to be in a complete enough state to share here.
+- [Game 2: Paint Collector](https://github.com/sasha-of-the-pixels/15-466-game-2-paint-collector)
+- [Game 6: Phototropic](https://github.com/sasha-of-the-pixels/15-466-game-6-phototropic)
+
 #### Final Game
 The final game project for the course was built on a team of four students throughout about 7 weeks.
 
