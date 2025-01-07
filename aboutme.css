@@ -22,6 +22,7 @@
 @font-face {
 	font-family: "Podkova";
 	src: url("fonts/Podkova-VariableFont_wght.ttf");
+	font-weight: 700;
 }
 
 body {
