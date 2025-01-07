@@ -1,0 +1,46 @@
+#everything {
+	background-color: #EAFAF5;
+	max-width: 850;
+	padding: 25px;
+	margin: auto;
+	color: #151025;
+}
+
+p, div {
+	font-family: "Fantasque Sans Mono"
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Itim"
+}
+
+a {
+	color: darkcyan;
+}
+
+a:visited {
+	color: slateblue;
+}
+
+img {
+	width: 100%;
+	height: auto;
+	margin: 8px 0px;
+}
+
+div.pictures {
+	display: block;
+	margin: auto;
+	width: 70%;
+}
+
+div.pictures.left{
+	display: inline-block;
+	width: 47.2%;	
+	margin-right: 8px;
+}
+
+#lantern {
+	width: 48.2%;
+	margin: 8px 0px 8px 8px;
+}
