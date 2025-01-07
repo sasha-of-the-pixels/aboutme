@@ -1,5 +1,35 @@
+@font-face {
+	font-family: "Fantasque Sans Mono";
+	src: url("fonts/FantasqueSansMono-Regular.woff");
+}
+@font-face {
+	font-family: "Fantasque Sans Mono";
+	src: url("fonts/FantasqueSansMono-Bold.woff");
+	font-weight: bold;
+}
+@font-face {
+	font-family: "Fantasque Sans Mono";
+	src: url("fonts/FantasqueSansMono-Italic.woff");
+	font-style: italic;
+}
+@font-face {
+	font-family: "Fantasque Sans Mono";
+	src: url("fonts/FantasqueSansMono-BoldItalic.woff");
+	font-weight: bold;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: "Podkova";
+	src: url("fonts/Podkova-VariableFont_wght.ttf");
+}
+
+body {
+	background-image: url("backgrounds/congruent_pentagon.webp");
+	background-repeat: repeat;
+}
 #everything {
-	background-color: #EAFAF5;
+	/* background-color: #EAFAF5; */
 	max-width: 850;
 	padding: 25px;
 	margin: auto;
@@ -7,17 +37,46 @@
 }
 
 p, div {
-	font-family: "Fantasque Sans Mono"
+	font-family: "Fantasque Sans Mono", sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: "Itim"
+	font-family: "Podkova", sans-serif;
+}
+
+div.narration {
+	font-style: italic;
+}
+
+div.boxed {
+	padding: 0px;
+	margin: 12px 0px;
+	border: solid 2px cornflowerblue;
+	background-color: #F5FFFA;
+}
+div.boxed p, div, h1, h2, h3, h4, h5, h6{
+	padding: 12px;
+	margin: 0px;
+}
+div.boxed > * > p {
+	padding: 0px;
+}
+
+div.boxed > *:first-child {
+	margin-top:0px;
+}
+div.boxed > *:last-child {
+	margin-bottom:0px;
+}
+
+div.boxed > h1 {
+	background-color: lightskyblue;
+	border-bottom: solid 2px cornflowerblue;
 }
 
 a {
 	color: darkcyan;
 }
-
 a:visited {
 	color: slateblue;
 }
@@ -29,6 +88,7 @@ img {
 }
 
 div.pictures {
+	padding: 0px;
 	display: block;
 	margin: auto;
 	width: 70%;
