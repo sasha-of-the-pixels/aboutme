@@ -27,6 +27,7 @@
 body {
 	background-image: url("backgrounds/congruent_pentagon.webp");
 	background-repeat: repeat;
+	background-attachment: fixed;
 }
 #everything {
 	/* background-color: #EAFAF5; */
@@ -52,6 +53,7 @@ div.boxed {
 	padding: 0px;
 	margin: 12px 0px;
 	border: solid 2px cornflowerblue;
+	border-radius: 12px;
 	background-color: #F5FFFA;
 }
 div.boxed p, div, h1, h2, h3, h4, h5, h6{
@@ -72,6 +74,7 @@ div.boxed > *:last-child {
 div.boxed > h1 {
 	background-color: lightskyblue;
 	border-bottom: solid 2px cornflowerblue;
+	border-radius: 10px;
 }
 
 a {
