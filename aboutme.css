@@ -24,6 +24,15 @@
 	src: url("fonts/Podkova-SemiBold.ttf");
 }
 
+@font-face {
+	font-family: "Jura";
+	src: url("fonts/Jura-Regular.ttf");
+}
+@font-face {
+	font-family: "Jura";
+	font-weight: bold;
+	src: url("fonts/Jura-Bold.ttf");
+}
 body {
 	background-image: url("backgrounds/congruent_pentagon.webp");
 	background-repeat: repeat;
@@ -42,7 +51,13 @@ p, div {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: "Podkova", sans-serif;
+	font-family: "Jura", sans-serif;
+}
+
+h2 {
+	/*border-top: solid 2px lightskyblue;*/
+	padding-top: 4px;
+	margin: 12px;
 }
 
 div.narration {
@@ -56,7 +71,7 @@ div.boxed {
 	border-radius: 12px;
 	background-color: #F5FFFA;
 }
-div.boxed p, div, h1, h2, h3, h4, h5, h6{
+div.boxed p, div, h1, h3, h4, h5, h6{
 	padding: 12px;
 	margin: 0px;
 }
@@ -87,7 +102,9 @@ a:visited {
 img {
 	width: 100%;
 	height: auto;
-	margin: 8px 0px;
+	margin: 4px 0px;
+	border: 2px solid lightskyblue;
+	border-radius: 9px;
 }
 
 div.pictures {
@@ -99,11 +116,11 @@ div.pictures {
 
 div.pictures.left{
 	display: inline-block;
-	width: 47.2%;	
-	margin-right: 8px;
+	width: 47.8%;	
+	margin-right: 4px;
 }
 
 #lantern {
 	width: 48.2%;
-	margin: 8px 0px 8px 8px;
+	margin: 4px 0px 4px 4px;
 }
