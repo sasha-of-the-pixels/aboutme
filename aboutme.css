@@ -1,38 +1,29 @@
 @font-face {
-	font-family: "Fantasque Sans Mono";
-	src: url("fonts/FantasqueSansMono-Regular.woff");
+	font-family: "Recursive Sans Linear Static";
+	src: url("fonts/RecursiveSansLnrSt-Regular.woff2");
 }
 @font-face {
-	font-family: "Fantasque Sans Mono";
-	src: url("fonts/FantasqueSansMono-Bold.woff");
+	font-family: "Recursive Sans Linear Static";
+	src: url("fonts/RecursiveSansLnrSt-Bold.woff2");
 	font-weight: bold;
 }
 @font-face {
-	font-family: "Fantasque Sans Mono";
-	src: url("fonts/FantasqueSansMono-Italic.woff");
+	font-family: "Recursive Sans Linear Static";
+	src: url("fonts/RecursiveSansLnrSt-Italic.woff2");
 	font-style: italic;
 }
 @font-face {
-	font-family: "Fantasque Sans Mono";
-	src: url("fonts/FantasqueSansMono-BoldItalic.woff");
+	font-family: "Recursive Sans Linear Static";
+	src: url("fonts/RecursiveSansLnrSt-BoldItalic.woff2");
 	font-weight: bold;
 	font-style: italic;
 }
 
 @font-face {
-	font-family: "Podkova";
-	src: url("fonts/Podkova-SemiBold.ttf");
+	font-family: "Capriola";
+	src: url("fonts/Capriola-Regular.ttf");
 }
 
-@font-face {
-	font-family: "Jura";
-	src: url("fonts/Jura-Regular.ttf");
-}
-@font-face {
-	font-family: "Jura";
-	font-weight: bold;
-	src: url("fonts/Jura-Bold.ttf");
-}
 body {
 	background-image: url("backgrounds/congruent_pentagon.webp");
 	background-repeat: repeat;
@@ -47,11 +38,15 @@ body {
 }
 
 p, div {
-	font-family: "Fantasque Sans Mono", sans-serif;
+	font-family: "Recursive Sans Linear Static", sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: "Jura", sans-serif;
+	font-family: "Capriola", sans-serif;
+}
+
+h1 {
+	color: royalblue;
 }
 
 h2 {
@@ -87,23 +82,27 @@ div.boxed > *:last-child {
 }
 
 div.boxed > h1 {
-	background-color: lightskyblue;
+	background-color: powderblue;
 	border-bottom: solid 2px cornflowerblue;
 	border-radius: 10px;
 }
 
 a {
 	color: darkcyan;
+	border-radius: 6px;
 }
 a:visited {
 	color: slateblue;
+}
+a:hover {
+	background-color: powderblue;
 }
 
 img {
 	width: 100%;
 	height: auto;
 	margin: 4px 0px;
-	border: 2px solid lightskyblue;
+	border: 2px solid powderblue;
 	border-radius: 9px;
 }
 
