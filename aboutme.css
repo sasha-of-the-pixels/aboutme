@@ -1,125 +1,150 @@
 @font-face {
-	font-family: "Recursive Sans Linear Static";
-	src: url("fonts/RecursiveSansLnrSt-Regular.woff2");
+    font-family: "Recursive Sans Linear Static";
+    src: url("fonts/RecursiveSansLnrSt-Regular.woff2");
 }
 @font-face {
-	font-family: "Recursive Sans Linear Static";
-	src: url("fonts/RecursiveSansLnrSt-Bold.woff2");
-	font-weight: bold;
+    font-family: "Recursive Sans Linear Static";
+    src: url("fonts/RecursiveSansLnrSt-Bold.woff2");
+    font-weight: bold;
 }
 @font-face {
-	font-family: "Recursive Sans Linear Static";
-	src: url("fonts/RecursiveSansLnrSt-Italic.woff2");
-	font-style: italic;
+    font-family: "Recursive Sans Linear Static";
+    src: url("fonts/RecursiveSansLnrSt-Italic.woff2");
+    font-style: italic;
 }
 @font-face {
-	font-family: "Recursive Sans Linear Static";
-	src: url("fonts/RecursiveSansLnrSt-BoldItalic.woff2");
-	font-weight: bold;
-	font-style: italic;
+    font-family: "Recursive Sans Linear Static";
+    src: url("fonts/RecursiveSansLnrSt-BoldItalic.woff2");
+    font-weight: bold;
+    font-style: italic;
 }
 
 @font-face {
-	font-family: "Capriola";
-	src: url("fonts/Capriola-Regular.ttf");
+    font-family: "Capriola";
+    src: url("fonts/Capriola-Regular.ttf");
 }
 
 body {
-	background-image: url("backgrounds/congruent_pentagon.webp");
-	background-repeat: repeat;
-	background-attachment: fixed;
+    background-image: url("backgrounds/congruent_pentagon.webp");
+    background-repeat: repeat;
+    background-attachment: fixed;
 }
+
+canvas {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    /*width: 100%;
+    height: 100%;*/
+    margin: 0;
+    padding: 0;
+    border: 0px solid cornflowerblue;
+    z-index: -1;
+}
+
 #everything {
-	/* background-color: #EAFAF5; */
-	max-width: 850;
-	padding: 25px;
-	margin: auto;
-	color: #151025;
+    /* background-color: #EAFAF5; */
+    max-width: 850;
+    padding: 25px;
+    margin: auto;
+    color: #151025;
 }
 
-p, div {
-	font-family: "Recursive Sans Linear Static", sans-serif;
+p,
+div {
+    font-family: "Recursive Sans Linear Static", sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
-	font-family: "Capriola", sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Capriola", sans-serif;
 }
 
 h1 {
-	color: royalblue;
+    color: royalblue;
 }
 
 h2 {
-	/*border-top: solid 2px lightskyblue;*/
-	padding-top: 4px;
-	margin: 12px;
+    /*border-top: solid 2px lightskyblue;*/
+    padding-top: 4px;
+    margin: 12px;
 }
 
 div.narration {
-	font-style: italic;
+    font-style: italic;
 }
 
 div.boxed {
-	padding: 0px;
-	margin: 12px 0px;
-	border: solid 2px cornflowerblue;
-	border-radius: 12px;
-	background-color: #F5FFFA;
+    padding: 0px;
+    margin: 12px 0px;
+    border: solid 2px cornflowerblue;
+    border-radius: 12px;
+    background-color: #ffffff;
 }
-div.boxed p, div, h1, h3, h4, h5, h6{
-	padding: 12px;
-	margin: 0px;
+div.boxed p,
+div,
+h1,
+h3,
+h4,
+h5,
+h6 {
+    padding: 12px;
+    margin: 0px;
 }
 div.boxed > * > p {
-	padding: 0px;
+    padding: 0px;
 }
 
 div.boxed > *:first-child {
-	margin-top:0px;
+    margin-top: 0px;
 }
 div.boxed > *:last-child {
-	margin-bottom:0px;
+    margin-bottom: 0px;
 }
 
 div.boxed > h1 {
-	background-color: powderblue;
-	border-bottom: solid 2px cornflowerblue;
-	border-radius: 10px;
+    background-color: powderblue;
+    border-bottom: solid 2px cornflowerblue;
+    border-radius: 10px;
 }
 
 a {
-	color: darkcyan;
-	border-radius: 6px;
+    color: darkcyan;
+    border-radius: 6px;
 }
 a:visited {
-	color: slateblue;
+    color: slateblue;
 }
 a:hover {
-	background-color: powderblue;
+    background-color: powderblue;
 }
 
 img {
-	width: 100%;
-	height: auto;
-	margin: 4px 0px;
-	border: 2px solid powderblue;
-	border-radius: 9px;
+    width: 100%;
+    height: auto;
+    margin: 4px 0px;
+    border: 2px solid powderblue;
+    border-radius: 9px;
 }
 
 div.pictures {
-	padding: 0px;
-	display: block;
-	margin: auto;
-	width: 70%;
+    padding: 0px;
+    display: block;
+    margin: auto;
+    width: 70%;
 }
 
-div.pictures.left{
-	display: inline-block;
-	width: 47.8%;	
-	margin-right: 4px;
+div.pictures.left {
+    display: inline-block;
+    width: 47.8%;
+    margin-right: 4px;
 }
 
 #lantern {
-	width: 48.2%;
-	margin: 4px 0px 4px 4px;
+    width: 48.2%;
+    margin: 4px 0px 4px 4px;
 }
