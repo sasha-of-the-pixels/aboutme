@@ -1,17 +1,10 @@
-console.log("script is running :3");
 const d = new Date();
 
 // setting up WebGL for the canvas
-// adapted from the "WebGL2 Fundamentals" website
-
-bg = document.getElementById("bg");
-console.log(bg);
-var gl = bg.getContext("webgl2");
-if (!gl) {
-    // TODO: static bg image instead
-}
-
-// ================ making shaders ======================
+// lots of stuff here adapted from the "WebGL2 Fundamentals" website
+// like the basic setup of how to get stuff drawn to the screen
+// but the shader itself is mine, I changed the setup
+// to use the uniforms that I want it to, and so on
 
 function createShader(gl, type, source) {
     var shader = gl.createShader(type);
@@ -24,6 +17,20 @@ function createShader(gl, type, source) {
 
     console.log(gl.getShaderInfoLog(shader));
     gl.deleteShader(shader);
+}
+
+function createProgram(gl, vertexShader, fragmentShader) {
+    var program = gl.createProgram();
+    gl.attachShader(program, vertexShader);
+    gl.attachShader(program, fragmentShader);
+    gl.linkProgram(program);
+    var success = gl.getProgramParameter(program, gl.LINK_STATUS);
+    if (success) {
+        return program;
+    }
+
+    console.log(gl.getProgramInfoLog(program));
+    gl.deleteProgram(program);
 }
 
 var vertexShaderSource = `#version 300 es
@@ -138,83 +145,94 @@ var fragmentShaderSource = `#version 300 es
     }
 `;
 
-var fragmentShader = createShader(gl, gl.FRAGMENT_SHADER, fragmentShaderSource);
-var vertexShader = createShader(gl, gl.VERTEX_SHADER, vertexShaderSource);
+bg = document.getElementById("bg");
+console.log(bg);
+var gl = bg.getContext("webgl2");
 
-// ================ making program ======================
+prev_time = 0;
+animToggle = document.getElementsByTagName("input")[0];
+var animateBg = false;
+animToggle.addEventListener("change", () => {
+    animateBg = !animateBg;
+    console.log("animateBg =", animateBg);
+});
 
-function createProgram(gl, vertexShader, fragmentShader) {
-    var program = gl.createProgram();
-    gl.attachShader(program, vertexShader);
-    gl.attachShader(program, fragmentShader);
-    gl.linkProgram(program);
-    var success = gl.getProgramParameter(program, gl.LINK_STATUS);
-    if (success) {
-        return program;
-    }
+if (!gl) {
+    // TODO: static bg image instead
+} else {
+    var fragmentShader = createShader(
+        gl,
+        gl.FRAGMENT_SHADER,
+        fragmentShaderSource,
+    );
+    var vertexShader = createShader(gl, gl.VERTEX_SHADER, vertexShaderSource);
 
-    console.log(gl.getProgramInfoLog(program));
-    gl.deleteProgram(program);
-}
-var program = createProgram(gl, vertexShader, fragmentShader);
+    var program = createProgram(gl, vertexShader, fragmentShader);
 
-// attribute / uniform locations
-var positionAttributeLocation = gl.getAttribLocation(program, "a_position");
-var timeUniformLocation = gl.getUniformLocation(program, "uTime");
+    // attribute / uniform locations
+    var positionAttributeLocation = gl.getAttribLocation(program, "a_position");
+    var timeUniformLocation = gl.getUniformLocation(program, "uTime");
 
-var positionBuffer = gl.createBuffer();
-gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
+    var positionBuffer = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
 
-// six 2d points
-var positions = [-1, -1, 1, 1, 1, -1, -1, -1, 1, 1, -1, 1];
-gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(positions), gl.STATIC_DRAW);
-var vao = gl.createVertexArray();
-gl.bindVertexArray(vao);
-gl.enableVertexAttribArray(positionAttributeLocation);
+    // six 2d points
+    var positions = [-1, -1, 1, 1, 1, -1, -1, -1, 1, 1, -1, 1];
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(positions), gl.STATIC_DRAW);
+    var vao = gl.createVertexArray();
+    gl.bindVertexArray(vao);
+    gl.enableVertexAttribArray(positionAttributeLocation);
 
-// vao setup
-var size = 2; // 2 components per iteration
-var type = gl.FLOAT; // the data is 32bit floats
-var normalize = false; // don't normalize the data
-var stride = 0; // 0 = move forward size * sizeof(type) each iteration to get the next position
-var offset = 0; // start at the beginning of the buffer
-gl.vertexAttribPointer(
-    positionAttributeLocation,
-    size,
-    type,
-    normalize,
-    stride,
-    offset,
-);
+    // vao setup
+    var size = 2; // 2 components per iteration
+    var type = gl.FLOAT; // the data is 32bit floats
+    var normalize = false; // don't normalize the data
+    var stride = 0; // 0 = move forward size * sizeof(type) each iteration to get the next position
+    var offset = 0; // start at the beginning of the buffer
+    gl.vertexAttribPointer(
+        positionAttributeLocation,
+        size,
+        type,
+        normalize,
+        stride,
+        offset,
+    );
 
-gl.canvas.width = window.innerWidth;
-gl.canvas.height = window.innerHeight;
-onresize = () => {
     gl.canvas.width = window.innerWidth;
     gl.canvas.height = window.innerHeight;
-};
-gl.viewport(0, 0, gl.canvas.width, gl.canvas.height);
+    onresize = () => {
+        gl.canvas.width = window.innerWidth;
+        gl.canvas.height = window.innerHeight;
+    };
+    gl.viewport(0, 0, gl.canvas.width, gl.canvas.height);
 
-function render(time) {
-    time *= 0.001; // convert to seconds
+    function render(t) {
+        // t *= 0.001; // convert to seconds
+        if (animateBg) {
+            prev_time += 0.01;
+        }
+        // t = prev_time;
 
-    // Clear the canvas
-    gl.clearColor(0, 0, 0, 0);
-    gl.clear(gl.COLOR_BUFFER_BIT);
+        console.log("t =", t, "prev_time =", prev_time);
 
-    // Tell it to use our program (pair of shaders)
-    gl.useProgram(program);
+        // Clear the canvas
+        gl.clearColor(0, 0, 0, 0);
+        gl.clear(gl.COLOR_BUFFER_BIT);
 
-    // set uniforms
-    gl.uniform1f(timeUniformLocation, time);
+        // Tell it to use our program (pair of shaders)
+        gl.useProgram(program);
 
-    // Bind the attribute/buffer set we want.
-    gl.bindVertexArray(vao);
-    var primitiveType = gl.TRIANGLES;
-    var offset = 0;
-    var count = 6;
-    gl.drawArrays(primitiveType, offset, count);
+        // set uniforms
+        gl.uniform1f(timeUniformLocation, prev_time);
 
-    requestAnimationFrame(render);
+        // Bind the attribute/buffer set we want.
+        gl.bindVertexArray(vao);
+        var primitiveType = gl.TRIANGLES;
+        var offset = 0;
+        var count = 6;
+        gl.drawArrays(primitiveType, offset, count);
+
+        requestAnimationFrame(render);
+    }
+    render(0);
 }
-render(d.getTime());

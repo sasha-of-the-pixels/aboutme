@@ -25,7 +25,8 @@
 }
 
 body {
-    background-image: url("backgrounds/congruent_pentagon.webp");
+    background-image: url("backgrounds-icons/hexagons-static.png");
+    background-size: 339px auto;
     background-repeat: repeat;
     background-attachment: fixed;
 }
@@ -34,20 +35,19 @@ canvas {
     position: fixed;
     left: 0px;
     top: 0px;
-    /*width: 100%;
-    height: 100%;*/
     margin: 0;
     padding: 0;
     border: 0px solid cornflowerblue;
     z-index: -1;
 }
 
-#everything {
+#main {
     /* background-color: #EAFAF5; */
     max-width: 850;
     padding: 25px;
     margin: auto;
-    color: #151025;
+    color: #000000;
+    padding-top: 0px;
 }
 
 p,
@@ -72,6 +72,52 @@ h2 {
     /*border-top: solid 2px lightskyblue;*/
     padding-top: 4px;
     margin: 12px;
+}
+
+.small {
+    font-size: smaller;
+    text-align: center;
+    font-style: italic;
+}
+
+#toggle-desc {
+    max-width: 220;
+    /*margin: auto;*/
+    background-color: cornflowerblue;
+    color: white;
+    padding: 8px;
+    border-radius: 12px;
+    position: sticky;
+    top: 12px;
+}
+
+#toggle-desc > div {
+    width: fit-content;
+    margin: 0;
+    padding: 0;
+}
+
+label.toggle {
+    float: right;
+    position: relative;
+    top: 8px;
+}
+
+input.toggle {
+    visibility: hidden;
+}
+span.toggle {
+    background-image: url("backgrounds-icons/checkbox-off.svg");
+    background-size: cover;
+    position: absolute;
+    top: -6px;
+    left: -14px;
+    width: 32px;
+    height: 32px;
+}
+
+input.toggle:checked ~ span.toggle {
+    background-image: url("backgrounds-icons/checkbox-on.svg");
 }
 
 div.narration {
