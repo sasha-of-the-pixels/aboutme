@@ -15,7 +15,6 @@ function createShader(gl, type, source) {
         return shader;
     }
 
-    console.log(gl.getShaderInfoLog(shader));
     gl.deleteShader(shader);
 }
 
@@ -29,7 +28,6 @@ function createProgram(gl, vertexShader, fragmentShader) {
         return program;
     }
 
-    console.log(gl.getProgramInfoLog(program));
     gl.deleteProgram(program);
 }
 
@@ -146,7 +144,6 @@ var fragmentShaderSource = `#version 300 es
 `;
 
 bg = document.getElementById("bg");
-console.log(bg);
 var gl = bg.getContext("webgl2");
 
 prev_time = 0;
@@ -154,7 +151,6 @@ animToggle = document.getElementsByTagName("input")[0];
 var animateBg = false;
 animToggle.addEventListener("change", () => {
     animateBg = !animateBg;
-    console.log("animateBg =", animateBg);
 });
 
 if (!gl) {
@@ -212,8 +208,6 @@ if (!gl) {
             prev_time += 0.01;
         }
         // t = prev_time;
-
-        console.log("t =", t, "prev_time =", prev_time);
 
         // Clear the canvas
         gl.clearColor(0, 0, 0, 0);

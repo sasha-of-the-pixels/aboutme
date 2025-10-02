@@ -114,6 +114,7 @@ span.toggle {
     left: -14px;
     width: 32px;
     height: 32px;
+	cursor: pointer;
 }
 
 input.toggle:checked ~ span.toggle {
